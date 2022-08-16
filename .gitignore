@@ -1,0 +1,9 @@
+/.gradle/
+/gradlew.bat
+/gradlew
+/libs/
+/.idea/
+/build/
+/gradle/
+/Nick.iml
+/out/

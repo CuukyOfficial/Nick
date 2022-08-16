@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'de.cuuky'
+version '1.0-SNAPSHOT'
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+jar {
+    if (project.hasProperty('destinationDir'))
+        destinationDirectory = file(project.property('destinationDir').toString())
+
+    if (project.hasProperty('fileName'))
+        archiveFileName = project.property('fileName').toString()
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+test {
+    useJUnitPlatform()
+}
