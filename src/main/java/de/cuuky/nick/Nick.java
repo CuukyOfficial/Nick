@@ -30,10 +30,9 @@ public class Nick extends JavaPlugin implements Listener {
     }
 
     private void changeNameTag(Player player) {
-        this.nameTagChanger.changePlayerName(player, this.nameTagName);
-        if (this.changeTab) {
-            player.setPlayerListName(this.nameTagName.replace("&", "§"));
-        }
+        String name = this.nameTagName.replace("&", "§");
+        this.nameTagChanger.changePlayerName(player, name);
+        if (this.changeTab) player.setPlayerListName(name);
     }
 
     private void changeSkin(Player player) {
